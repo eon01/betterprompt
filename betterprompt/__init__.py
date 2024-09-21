@@ -4,7 +4,7 @@ import math
 import os
 
 
-model_name: str = "text-davinci-003"
+model_name: str = "gpt-3.5-turbo"
 
 def get_from_dict_or_env(env_key: str) -> str:
   """Get a value from a dictionary or an environment variable."""
@@ -23,7 +23,7 @@ def call_openai(prompt: str):
   openai.api_key = openai_api_key
   #GET THE LOGPROB OF THE PROMPT
   response = openai.Completion.create(
-    model="text-davinci-003",
+    model="gpt-3.5-turbo",
     prompt=prompt,
     max_tokens=0,
     echo=True,
